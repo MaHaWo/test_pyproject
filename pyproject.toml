@@ -1,6 +1,5 @@
 [project]
 name = "example_package_mahawo"
-version = "0.0.1"
 authors = [
   { name="Example Author", email="author@example.com" },
 ]
@@ -12,7 +11,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-
+dynamic = ["version"]
 dependencies = [
     "numpy", 
 ]
@@ -24,6 +23,9 @@ Issues = "https://github.com/pypa/sampleproject/issues"
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = { attr = "example_package_mahawo.__version__" }
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov", "pre-commit"]
