@@ -7,6 +7,10 @@ on:
       branches: [ main ]
       types: 
         - completed
+    push: 
+      branches: [ main ]
+      tags: 
+        - "*.*.*" 
 
     # allow manual trigger
     workflow_dispatch: 
